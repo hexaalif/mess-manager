@@ -3,9 +3,19 @@ import React from "react";
 const ToDo = () => {
   const taskSubmit = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    console.log(name);
-    // name = "";
+    const AddingToDo = {
+      name: e.target.name.value,
+    };
+
+    fetch("http://localhost:5000/addToDo", {
+      method: "POST",
+      header: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(AddingToDo),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   return (
