@@ -1,21 +1,26 @@
 import React from "react";
+import ShowToDo from "./ShowToDo";
 
 const ToDo = () => {
   const taskSubmit = (e) => {
     e.preventDefault();
     const AddingToDo = {
       name: e.target.name.value,
+      // title: e.target.title.value,
     };
+    console.log(AddingToDo);
 
-    fetch("http://localhost:5000/addToDo", {
+    fetch("https://boiling-basin-12482.herokuapp.com/toDo", {
       method: "POST",
-      header: {
-        "content-type": "application/json",
+      headers: {
+        "Content-type": "application/json",
       },
       body: JSON.stringify(AddingToDo),
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+
+    e.target.reset();
   };
 
   return (
@@ -34,12 +39,19 @@ const ToDo = () => {
           placeholder="Type a to-do"
           className="input input-bordered w-full max-w-xs"
         />
+        {/* <input
+          type="text"
+          name="title"
+          placeholder="Type a Title"
+          className="input input-bordered w-full max-w-xs my-12"
+        /> */}
         <input
           type="submit"
           value="Add task"
-          className="btn bg-black my-12 input input-bordered w-full max-w-xs"
+          className="btn bg-black input input-bordered w-full max-w-xs"
         />
       </form>
+      <ShowToDo />
     </div>
   );
 };

@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 
 const useToDo = () => {
-  const [toDos, setToDos] = useState([]);
+  const [toDo, setToDo] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/toDo")
       .then((res) => res.json())
-      .then((data) => setToDos(data));
+      .then((data) => setToDo(data));
   }, []);
-  return [toDos, setToDos];
+  return [toDo, setToDo];
 };
 
 export default useToDo;

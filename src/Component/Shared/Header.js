@@ -31,10 +31,10 @@ const Header = () => {
                 <Link to="/calender">Calender</Link>
               </li>
               <li>
-                <a>Item 1</a>
+                <Link to="/to-do">To-Do</Link>
               </li>
               <li>
-                <a>Item 3</a>
+                <Link to="/completed">Completed Tasks</Link>
               </li>
             </ul>
           </div>

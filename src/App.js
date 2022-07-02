@@ -6,6 +6,7 @@ import Footer from "./Component/Shared/Footer";
 import Login from "./Component/Login/Login";
 import Home from "./Component/Home/Home";
 import ToDo from "./Component/ToDo/ToDo";
+import CompletedTasks from "./Component/CompletedTasks/CompletedTasks";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/calender" element={<Calender />}></Route>
+        <Route path="/completed" element={<CompletedTasks />}></Route>
         <Route path="/to-do" element={<ToDo></ToDo>}></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>
